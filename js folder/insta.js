@@ -1,7 +1,8 @@
-import { cardData } from './cardData.js';
-import { renderCards } from './renderCards.js';
-import { toggleLike } from './toggleLike.js';
-import { addCopyright } from './copyright.js';
+import { cardData } from "./cardData.js";
+import { renderCards } from "./renderCards.js";
+import { toggleLike } from "./toggleLike.js";
+import { addCopyright } from "./copyright.js";
+import { formModal } from "./formModal.js";
 
 // Call the function to render the cards into the section with ID "bodyPart"
 renderCards(cardData);
@@ -11,3 +12,6 @@ toggleLike();
 
 //Call the function to add the copyright to footer
 addCopyright();
+
+// Form modal
+formModal();
