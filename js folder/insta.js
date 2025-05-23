@@ -8,4 +8,6 @@ renderCards(cardData);
 
 // Attach event listeners to like buttons so they respond when clicked
 toggleLike();
+
+//Call the function to add the copyright to footer
 addCopyright();
