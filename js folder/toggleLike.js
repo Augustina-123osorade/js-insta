@@ -11,7 +11,7 @@ export function toggleLike() {
       if (isLiked) {
         // If already liked, set it back to unliked state (no fill, gray stroke)
         heart.setAttribute("fill", "none");
-        heart.setAttribute("stroke", "gray"); // stroke goes back to gray
+        heart.setAttribute("stroke", "black"); // stroke goes back to gray
       } else {
         // If not liked, set both fill and stroke to red
         heart.setAttribute("fill", "red");
