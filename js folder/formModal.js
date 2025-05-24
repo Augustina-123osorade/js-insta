@@ -10,7 +10,7 @@ export function formModal() {
     // Modal container
     const modalDiv = document.createElement("div");
     modalDiv.classList.add("modal-container");
-    modalDiv.innerHTML = `<button class="close-btn"><i class="fas fa-times"></i></button>`;
+    modalDiv.innerHTML = `<button class="modal-close-btn"><i class="fas fa-times"></i></button>`;
 
     // HTML form inside the modal
     const formModal = document.createElement("form");
@@ -44,7 +44,7 @@ export function formModal() {
     modalDiv.appendChild(formModal);
     modalOverlay.appendChild(modalDiv);
 
-    const closeBtn = modalDiv.querySelector(".close-btn");
+    const closeBtn = modalDiv.querySelector(".modal-close-btn");
     const titleTextbox = formModal.querySelector(".form-input");
     const imageInput = formModal.querySelector(".upload");
     const submitBtn = formModal.querySelector(".submit-btn");
