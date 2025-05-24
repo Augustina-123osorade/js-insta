@@ -3,6 +3,7 @@ import { renderCards } from "./renderCards.js";
 import { toggleLike } from "./toggleLike.js";
 import { addCopyright } from "./copyright.js";
 import { formModal } from "./formModal.js";
+import { createRightContainer } from './newpost.js';
 
 // Call the function to render the cards into the section with ID "bodyPart"
 renderCards(cardData);
