@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 *,
@@ -78,17 +79,6 @@ img {
   border: none;
 }
 
-.like-button svg {
-  cursor: pointer;
-  stroke: #212121;
-  opacity: 1;
-  transition: all ease 0.3s;
-}
-
-.like-button svg:hover {
-  opacity: 1;
-}
-
 .sr-only {
   clip: rect(1px 1px 1px 1px);
   clip-path: inset(50%);
@@ -116,7 +106,8 @@ Modal
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(73, 166, 233, 0.5);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.6);
   display: grid;
   place-items: center;
   transition: var(--transition);
@@ -200,4 +191,37 @@ Modal
     grid-template-columns: repeat(3, 1fr);
     gap: 2.75rem 1.5rem;
   }
+}
+
+/* Match size and shape of all images */
+.consistent-img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+/* Like button (not liked) */
+.like-button svg {
+  stroke: #212121;
+  fill: none;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+/* Hover when not liked */
+.like-button:hover svg {
+  opacity: 1;
+}
+
+/* When liked - bright red, no black stroke */
+.like-button.liked svg {
+  fill: var(--clr-red-dark);
+  stroke: var(--clr-red-dark);
+  opacity: 1;
+}
+
+/* Hover when liked - faded effect */
+.like-button.liked:hover svg {
+  opacity: 0.7;
 }
