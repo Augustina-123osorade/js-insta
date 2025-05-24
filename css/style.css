@@ -33,7 +33,7 @@ margin-left:600px;
 
 #first_container {
   display:flex;
-  gap:48rem;
+  gap:10rem;
   justify-content: space-between;
   align-items:center;
   padding: 1rem 2rem;
@@ -46,6 +46,11 @@ margin-left:600px;
   display: flex;
   align-items: center;
   gap:1rem;
+}
+
+#avatarImg{
+    max-width: 200px;
+    max-height: 200px;
 }
 
 #textContainer {
@@ -81,12 +86,11 @@ margin-left:600px;
   color:#212121;
   border: none;
   background: inherit;
-  opacity: 0.4;
-  border-radius: 10px;
   padding: 10px;
-  /* background-color: red; */
   cursor: pointer;
   text-align: left;
+  display: flex;
+  gap: 0.4rem;
  }
 
 #right_container{
@@ -216,17 +220,65 @@ img {
         font-size: .85rem;
         flex-basis: 60%;
     }
+   #first_container{
+        flex-direction: column;
+    }
 }
 
-/* sytle for edit Modal */
+/* sytle for edit Modal 
 
-/* .editModal {
     display: none;
     position: fixed;
     top: 10;
     left: 100;
     width: 100%;
+    /* max-width: 500px; 
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
-} */
+    padding: 30px 500px;
+ */
+
+ /* Modal background overlay with blur effect */
+.editModal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px); /* This applies the blur */
+  -webkit-backdrop-filter: blur(5px); /* For Safari support */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal content */
+.editModal-content {
+  background: var(--bg-body);
+  padding: 25px;
+  border-radius: 8px;
+  width: 300px;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#editName, #popSave{
+    padding: 5px;
+    width: 100%;
+}
+#popSave{
+    margin-top: 10px;
+    background-color: var(--color-dark-gray);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
