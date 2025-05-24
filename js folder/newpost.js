@@ -1,5 +1,5 @@
 export function createRightContainer() {
-    const header = document.querySelector("header");
+  const header = document.querySelector("header");
 
   const button = document.createElement("button");
   button.id = "right_container";
