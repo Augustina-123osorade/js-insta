@@ -203,10 +203,6 @@ Modal
   cursor: pointer;
 }
 
-
-
-
-
 /* Devices: Tablets, ipads */
 @media (min-width: 600px) {
   #bodyPart {
