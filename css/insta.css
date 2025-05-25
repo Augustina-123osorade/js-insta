@@ -12,7 +12,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 :root {
   --bg-body: #f8f2e5;
   --bg-logo: #ffffff;
@@ -28,60 +27,60 @@ html {
   --fixed-width: 620px;
   --transition: all 0.3s linear;
 }
-#menuBar{
-background-color:#FFFFFFCC;
-width:100%;
-text-align: center;
-padding-top:10px;
+#menuBar {
+  background-color: #ffffffcc;
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
 }
 
-#logoImg{
-margin-left:600px;
+#logoImg {
+  margin-left: 600px;
 }
 
 #first_container {
-  display:flex;
-  gap:10rem;
+  display: flex;
+  gap: 10rem;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
   padding: 1rem 2rem;
   width: 100%;
-  max-width:1440px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
 #left_container {
   display: flex;
   align-items: center;
-  gap:1rem;
+  gap: 1rem;
 }
 
-#avatarImg{
-    max-width: 200px;
-    max-height: 200px;
+#avatarImg {
+  max-width: 200px;
+  max-height: 200px;
 }
 
 #textContainer {
   display: flex;
-  flex-direction:column;
-  gap:1.5rem;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 #textContainer p:first-of-type {
-  font-size:1.95rem;
+  font-size: 1.95rem;
   font-weight: 500;
-  color:#212121;
+  color: #212121;
 }
 
 #textContainer p:nth-of-type(2) {
-  font-size:0.95rem;
-  color:#212121B2;
-  margin-bottom:40px;
+  font-size: 0.95rem;
+  color: #212121b2;
+  margin-bottom: 40px;
 }
 
 /*edit button for header*/
- #textContainer button {
-  font-size:0.8rem;
-  color:#212121;
+#textContainer button {
+  font-size: 0.8rem;
+  color: #212121;
   border: none;
   background: inherit;
   padding: 10px;
@@ -89,16 +88,38 @@ margin-left:600px;
   text-align: left;
   display: flex;
   gap: 0.4rem;
- }
+}
 
-#right_container{
+#right_container {
   display: flex;
-  justify-self: end;
-  align-content: end;
+  width: 120px;
+  height: 40px;
+  flex-direction: row;
+  justify-self: center;
+  align-content: center;
   align-items: center;
+  border: 1px solid #212121;
+  border-radius: 5px;
+  background-color: #111;
   gap: 0.4rem;
   font-size: 1rem;
-  margin-top:200px;
+  margin-top: 200px;
+  padding: 0.5rem;
+}
+
+#right_container:hover {
+  background-color: rgb(52, 51, 51);
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+#right_container img {
+  height: 20px;
+  width: 20px;
+}
+
+#right_container p {
+  color: #ffffff;
 }
 
 body {
@@ -488,8 +509,10 @@ Modal
   display: none;
   position: fixed;
   z-index: 999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px); /* This applies the blur */
   -webkit-backdrop-filter: blur(5px); /* For Safari support */
@@ -510,19 +533,21 @@ Modal
 /* Close button */
 .close {
   position: absolute;
-  top: 10px; right: 15px;
+  top: 10px;
+  right: 15px;
   font-size: 20px;
   cursor: pointer;
 }
 
-#editName, #popSave{
-    padding: 5px;
-    width: 100%;
+#editName,
+#popSave {
+  padding: 5px;
+  width: 100%;
 }
-#popSave{
-    margin-top: 10px;
-    background-color: var(--color-dark-gray);
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
+#popSave {
+  margin-top: 10px;
+  background-color: var(--color-dark-gray);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
