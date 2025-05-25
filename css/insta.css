@@ -483,3 +483,46 @@ Modal
     font-size: 0.85rem;
   }
 }
+/* Modal background overlay with blur effect */
+.editModal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px); /* This applies the blur */
+  -webkit-backdrop-filter: blur(5px); /* For Safari support */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal content */
+.editModal-content {
+  background: var(--bg-body);
+  padding: 25px;
+  border-radius: 8px;
+  width: 300px;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#editName, #popSave{
+    padding: 5px;
+    width: 100%;
+}
+#popSave{
+    margin-top: 10px;
+    background-color: var(--color-dark-gray);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
