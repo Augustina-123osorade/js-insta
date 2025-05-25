@@ -52,19 +52,6 @@ textContainer.appendChild(profession);
 textContainer.appendChild(editProfile);
 firstContainer.appendChild(textContainer);
 
-// editProfile.className = "Editbtn"
-
-
-//create the edit button
-// const editButton = document.createElement("button");
-// editButton.textContent = "Edit";
-// document.body.appendChild(editButton);
-
-// //create modal element
-// const modal = document.createElement("div");
-// modal.className = "editModal";
-// document.body.appendChild(modal);
-
 editProfile.addEventListener("click", function showModal (){
 
      // Remove existing modal if present

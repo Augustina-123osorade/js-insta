@@ -70,16 +70,6 @@ margin-left:600px;
   margin-bottom:40px;
 }
 
-/* #textContainer span  {
-  font-size: 0.9rem;
-  color:#212121;
-  
-} */
-/* #textContainer span p {
-  font-size:0.58rem;
-  color:#212121;
-  
-} */
 /*edit button for header*/
  #textContainer button {
   font-size:0.8rem;
@@ -224,20 +214,6 @@ img {
         flex-direction: column;
     }
 }
-
-/* sytle for edit Modal 
-
-    display: none;
-    position: fixed;
-    top: 10;
-    left: 100;
-    width: 100%;
-    /* max-width: 500px; 
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    padding: 30px 500px;
- */
 
  /* Modal background overlay with blur effect */
 .editModal {
