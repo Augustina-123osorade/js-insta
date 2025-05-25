@@ -32,16 +32,22 @@ html {
   width: 100%;
   text-align: center;
   padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #logoImg {
-  margin-left: 600px;
+  max-width: 100%;
+  height: auto;
+  width: auto; /* Ensure it scales correctly */
+  display: block;
 }
 
 #first_container {
   display: flex;
-  flex-direction: column;
-  gap: 10rem;
+  gap: 48rem;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
@@ -56,20 +62,30 @@ html {
   gap: 1rem;
 }
 
-#avatarImg {
-  max-width: 200px;
-  max-height: 200px;
-}
-
 #textContainer {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 3rem;
 }
+
 #textContainer p:first-of-type {
-  font-size: 1.95rem;
+  font-size: 1.25rem;
   font-weight: 500;
   color: #212121;
+}
+
+#editContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+#editContainer:hover {
+  opacity: 1;
+  transition: all ease 0.3s;
 }
 
 #textContainer p:nth-of-type(2) {
@@ -78,19 +94,14 @@ html {
   margin-bottom: 40px;
 }
 
-/*edit button for header*/
-#textContainer button {
-  font-size: 0.8rem;
+#textContainer span {
+  font-size: 0.9rem;
   color: #212121;
-  border: none;
-  background: inherit;
-  padding: 10px;
-  cursor: pointer;
-  text-align: left;
-  display: flex;
-  gap: 0.4rem;
 }
-
+#textContainer span p {
+  font-size: 0.58rem;
+  color: #212121;
+}
 #right_container {
   display: flex;
   width: 120px;
@@ -117,6 +128,7 @@ html {
 #right_container img {
   height: 20px;
   width: 20px;
+  filter: invert(1);
 }
 
 #right_container p {
