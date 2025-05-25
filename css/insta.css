@@ -1,0 +1,411 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg-body: #f8f2e5;
+  --bg-logo: #ffffff;
+  --font-primary: "Poppins", sans-serif;
+  --font-weight-bold: 500;
+  --color-dark-gray: #212121;
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-primary-5: hsl(205, 78%, 60%);
+  --clr-red-dark: hsl(357, 92%, 49%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --fixed-width: 620px;
+  --transition: all 0.3s linear;
+}
+body {
+  background-color: var(--bg-body);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-primary);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+#bodyPart {
+  max-width: 90%;
+  padding: 2.5rem 0;
+  margin: 2rem auto;
+  border-block: 1px solid rgba(33, 33, 33, 0.4);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem 1.25rem;
+}
+
+.card-component {
+  min-width: 100%;
+}
+
+.card-data {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-data p {
+  color: var(--color-dark-gray);
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  flex-basis: 75%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.like-button {
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
+.sr-only {
+  clip: rect(1px 1px 1px 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+#image-3 {
+  border-radius: 10px;
+}
+
+/*
+=============== 
+Modal
+===============
+*/
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+  visibility: hidden;
+  z-index: -10;
+}
+
+.open-modal {
+  visibility: visible;
+  z-index: 10;
+}
+
+.modal-container {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  width: 90vw;
+  max-width: 500px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  box-shadow: var(--light-shadow);
+  margin-top: 50px;
+}
+
+/* Base styles for the close button (used by image overlay) */
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  color: var(--clr-red-dark);
+  cursor: pointer;
+  transition: var(--transition);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 11;
+}
+
+.close-btn:hover {
+  color: var(--clr-red-light);
+  transform: scale(1.1);
+  background: white;
+}
+
+/* Styles for the modal form close button */
+.modal-close-btn {
+  position: absolute;
+  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  color: var(--clr-red-dark);
+  cursor: pointer;
+  transition: var(--transition);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 11;
+  top: -40px;
+  right: 5px;
+}
+
+.modal-close-btn:hover {
+  color: var(--clr-red-light);
+  transform: scale(1.1);
+  background: white;
+}
+
+.modal-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal-form p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-dark-gray);
+  margin-bottom: 0.5rem;
+}
+
+.form-row-1,
+.form-row-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.form-label {
+  text-align: left;
+  font-size: 0.9rem;
+  color: var(--color-dark-gray);
+  font-weight: 500;
+}
+
+.form-input {
+  width: 100%;
+  height: 40px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--clr-primary-5);
+}
+
+.upload {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  height: auto;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.upload::-webkit-file-upload-button {
+  background-color: var(--clr-primary-5);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 35px;
+  margin-right: 10px;
+}
+
+.upload::-webkit-file-upload-button:hover {
+  background-color: var(--clr-primary-5);
+  opacity: 0.9;
+}
+
+.submit-btn {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  background-color: var(--color-dark-gray);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+.submit-btn:not(:disabled):hover {
+  background-color: #000;
+  opacity: 0.9;
+}
+
+/* Devices: Tablets, ipads */
+@media (min-width: 600px) {
+  #bodyPart {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-data p {
+    font-size: 0.9rem;
+    flex-basis: 70%;
+  }
+}
+
+/*Devices: Laptops, desktops*/
+@media (min-width: 1024px) {
+  #bodyPart {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*Target: large screens*/
+@media (min-width: 1280px) {
+  #bodyPart {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.75rem 1.5rem;
+  }
+}
+
+/* Match size and shape of all images */
+.consistent-img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+/* Like button (not liked) */
+.like-button svg {
+  stroke: #212121;
+  fill: none;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+/* Hover when not liked */
+.like-button:hover svg {
+  opacity: 1;
+}
+
+/* When liked - bright red, no black stroke */
+.like-button.liked svg {
+  fill: var(--clr-red-dark);
+  stroke: var(--clr-red-dark);
+  opacity: 1;
+}
+
+/* Hover when liked - faded effect */
+.like-button.liked:hover svg {
+  opacity: 0.7;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .modal-container {
+    width: 95vw;
+    padding: 1.5rem;
+  }
+
+  .modal-form {
+    gap: 1rem;
+  }
+
+  .form-input {
+    height: 40px;
+  }
+
+  .upload {
+    min-height: 50px;
+    padding: 0.5rem;
+  }
+
+  .upload::-webkit-file-upload-button {
+    height: 40px;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .submit-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-container {
+    padding: 1rem;
+  }
+
+  .modal-form p {
+    font-size: 1.1rem;
+  }
+
+  .form-label {
+    font-size: 0.8rem;
+  }
+
+  .form-input {
+    height: 38px;
+  }
+
+  .upload {
+    min-height: 45px;
+    padding: 0.4rem;
+  }
+
+  .upload::-webkit-file-upload-button {
+    height: 38px;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
