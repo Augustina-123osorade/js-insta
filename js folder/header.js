@@ -61,6 +61,7 @@ setTimeout(() => {
   }
 }, 100);
 
+
 editProfile.addEventListener("click", function showModal (){
 
      // Remove existing modal if present
