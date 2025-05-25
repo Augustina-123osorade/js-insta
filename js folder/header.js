@@ -50,7 +50,17 @@ editProfile.innerHTML = `<svg width="16" height="12" viewBox="0 0 16 16" fill="n
 textContainer.appendChild(personName);
 textContainer.appendChild(profession);
 textContainer.appendChild(editProfile);
-firstContainer.appendChild(textContainer);
+leftContainer.appendChild(textContainer);
+
+// Wait for the New Post button to be created by newpost.js, then move it to the correct position
+setTimeout(() => {
+  const newPostButton = document.getElementById("right_container");
+  if (newPostButton && firstContainer) {
+    // Move the button from header to firstContainer
+    firstContainer.appendChild(newPostButton);
+  }
+}, 100);
+
 
 editProfile.addEventListener("click", function showModal (){
 
