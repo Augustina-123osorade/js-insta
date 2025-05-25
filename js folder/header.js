@@ -2,7 +2,7 @@ const logo = document.getElementById("menuBar");
 
 const logoImage = document.createElement("img");
 
-logoImage.src = "../assets/Logo.svg"
+logoImage.src = "/assets/Logo.svg"
 
 logoImage.id = "logoImg"
 
@@ -21,7 +21,7 @@ leftContainer.id = "left_container"
 textContainer.id = "textContainer"
 
 const avatar = document.createElement("img");
-avatar.src = "../assets/Avatar.svg"
+avatar.src = "/assets/Avatar.svg"
 
 avatar.id = "avatarImg"
 
