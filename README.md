@@ -4,7 +4,7 @@ A collaborative photo-sharing web project, developed by a team of 12, it began a
 
 
 ## 🌐 Live Site
-[View Insta-Spots](https://insta-spots.vercel.app/)
+[View Insta-Spots](https://js-insta-j4j4.vercel.app/)
 
 ---
 
