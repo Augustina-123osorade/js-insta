@@ -142,6 +142,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: var(--font-primary);
+  min-height: 100vh;
 }
 
 img {
@@ -453,70 +454,107 @@ Modal
   opacity: 0.7;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+/* ================================
+   MOBILE RESPONSIVENESS 
+   ================================ */
+
+/* Override tablet/desktop grid for mobile devices */
+@media screen and (max-width: 768px) {
+  /* Force single column layout on mobile */
+  #bodyPart {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    max-width: 95% !important;
+    padding: 1.5rem 0 !important;
+    gap: 1.5rem !important;
+    margin: 1rem auto !important;
+  }
+  
+  /* Ensure cards take full width */
+  .card-component {
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Mobile-friendly card text */
+  .card-data p {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Mobile-friendly modals */
   .modal-container {
-    width: 95vw;
-    padding: 1.5rem;
+    width: 95vw !important;
+    margin: 1rem !important;
+    padding: 1.5rem !important;
   }
-
-  .modal-form {
-    gap: 1rem;
+  
+  .editModal-content {
+    width: 90vw !important;
+    max-width: 350px !important;
+    padding: 20px !important;
   }
-
-  .form-input {
-    height: 40px;
+  
+  /* Touch-friendly buttons */
+  .like-button {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    padding: 8px !important;
   }
-
-  .upload {
-    min-height: 50px;
-    padding: 0.5rem;
+    /* Mobile header adjustments */
+  #first_container {
+    gap: 1rem !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
-
-  .upload::-webkit-file-upload-button {
-    height: 40px;
-    padding: 0.4rem 0.8rem;
+  
+  /* Reorganize left container for mobile - image first, then text */
+  #left_container {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1rem !important;
   }
-
-  .submit-btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
+    /* Ensure text container stacks below image */
+  #textContainer {
+    order: 2 !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 0.5rem !important;
+  }
+  
+  /* Move edit profile button below text - closer spacing */
+  #right_container {
+    margin-top: 0.5rem !important;
+    order: 3 !important;
+  }
+    /* Add body padding for mobile to prevent edge touching */
+  body {
+    padding: 1rem !important;
   }
 }
 
-@media (max-width: 480px) {
+/* Very small phones (320px - 480px) */
+@media screen and (max-width: 480px) {
+  #bodyPart {
+    max-width: 98% !important;
+    padding: 1rem 0 !important;
+    gap: 1rem !important;
+  }
+  
+  .card-data p {
+    font-size: 0.85rem !important;
+  }
+  
   .modal-container {
-    padding: 1rem;
+    padding: 1rem !important;
   }
-
-  .modal-form p {
-    font-size: 1.1rem;
-  }
-
-  .form-label {
-    font-size: 0.8rem;
-  }
-
-  .form-input {
-    height: 38px;
-  }
-
-  .upload {
-    min-height: 45px;
-    padding: 0.4rem;
-  }
-
-  .upload::-webkit-file-upload-button {
-    height: 38px;
-    padding: 0.3rem 0.7rem;
-    font-size: 0.9rem;
-  }
-
-  .submit-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
+  
+  .editModal-content {
+    width: 95vw !important;
+    padding: 15px !important;
   }
 }
+
 /* Modal background overlay with blur effect */
 .editModal {
   display: none;
