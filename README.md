@@ -46,7 +46,7 @@ You may notice that not all six Group-1 members appear in the commit history. Th
 
 - Group-1 employed **pair programming** as their primary collaboration method.
 - All group members particiated in **collaborative video calls** where they discussed, wrote and reviewed code in real time.
-- A **designated team member (`@Git-Angel`)** was responsible for pushing the code to Group-1 branch
+- A **designated team member (`@Git-Angel`)** was responsible for pushing the code to Group-1 branch.
 - This strategy allowed the group to work **closely and efficiently**, even though the commit logs show contribution from only one account.
   
 > This note serves to clarify that all Group-1 members were actively involved in the transition of the project from HTML & CSS to JavaScript.
